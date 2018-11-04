@@ -18,7 +18,6 @@ source_code_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionm
 support_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector/issues
 host_os_tags:
   - osx-10.10
-  - ubuntu-16.04
 
 # If this step should be available only for certain project types
 # just uncomment this `project_type_tags` section and include all the
@@ -53,10 +52,8 @@ deps:
   brew:
   - name: git
   - name: wget
-  apt_get:
-  - name: git
-  - name: wget
-
+  - name: curl
+  - name: unzip
 
 toolkit:
   bash:
@@ -64,24 +61,44 @@ toolkit:
 
 
 inputs:
-  - example_step_input: Default Value - you can leave this empty if you want to
+  - files_paths: 
     opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
+      title: "Paths of the Swift files"
+      summary: The paths for the files which you be checked and have the values replaced if it's aplicable.
       description: |
-        Description of this input.
-
-        Can be Markdown formatted text.
+        All the file paths separated by a white space.
+        The files will be visited by the [variable-injector](https://github.com/LucianoPAlmeida/variable-injector).
+        If there are literals matching the ENV_VAR pattern and the environment variable name is defined on the current workflow it will replace with it value.
+      
       is_expand: true
       is_required: true
       value_options: []
 
-outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - paths_to_exclude: 
     opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
+      title: "Environment Variable Names to ignore"
+      summary: The variable names that will be ignored by the variable injector.
       description: |
-        Description of this output.
-
-        Can be Markdown formatted text.
+        All the names paths separated by a white space.
+        If a string literal on this files matches the environment variable pattern $(ENV_VAR) but is not a ENV var to be replaced we can just ignore it. 
+      
+      is_expand: true
+      is_required: false
+      value_options: []
+  - verbose: false
+      opts:
+      title: "Verbose mode"
+      summary: Indicates if the injection should print logs.
+      description: |
+        All injectictions variables and values logged. Also the output files content.
+      
+      is_expand: true
+      is_required: false
+      value_options: [true, false]
+outputs:
+  - Logs:
+    opts:
+      title: "Injection Logs"
+      summary: The logs of the variables and values. Also the file output.
+      description: |
+        If in verbose mode there are logs as output.
