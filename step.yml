@@ -86,7 +86,7 @@ inputs:
       is_required: false
       value_options: []
   - verbose: false
-      opts:
+    opts:
       title: "Verbose mode"
       summary: Indicates if the injection should print logs.
       description: |
