@@ -9,7 +9,7 @@ cp -f x86_64-apple-macosx10.10/release/libSwiftSyntax.dylib /usr/local/lib/libSw
 #Check verbose
 VERBOSE=""
 
-if [ ${verbose} = true ]; then
+if [ ${verbose} = "true" ]; then
     VERBOSE="--verbose"
 fi;
 
