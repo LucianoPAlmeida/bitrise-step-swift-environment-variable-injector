@@ -70,9 +70,8 @@ inputs:
         The files will be visited by the [variable-injector](https://github.com/LucianoPAlmeida/variable-injector).
         If there are literals matching the ENV_VAR pattern and the environment variable name is defined on the current workflow it will replace with it value.
       
-      is_expand: true
+      is_expand: false
       is_required: true
-      value_options: []
 
   - paths_to_exclude: 
     opts:
@@ -82,9 +81,8 @@ inputs:
         All the names paths separated by a white space.
         If a string literal on this files matches the environment variable pattern $(ENV_VAR) but is not a ENV var to be replaced we can just ignore it. 
       
-      is_expand: true
+      is_expand: false
       is_required: false
-      value_options: []
   - verbose: false
     opts:
       title: "Verbose mode"
@@ -95,10 +93,4 @@ inputs:
       is_expand: true
       is_required: false
       value_options: [true, false]
-outputs:
-  - Logs:
-    opts:
-      title: "Injection Logs"
-      summary: The logs of the variables and values. Also the file output.
-      description: |
-        If in verbose mode there are logs as output.
+
