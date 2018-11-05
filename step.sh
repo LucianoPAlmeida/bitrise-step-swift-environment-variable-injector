@@ -17,5 +17,5 @@ fi;
 
 TEMP_DIR=$(pwd)
 popd
-echo "=> $VERBOSE"
+
 variable-injector --file ${files_paths} $VERBOSE --ignore ${vars_to_ignore} 
