@@ -19,23 +19,10 @@ support_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-
 host_os_tags:
   - osx-10.10
 
-# If this step should be available only for certain project types
-# just uncomment this `project_type_tags` section and include all the
-# project types supported by the step. If the step can be used for all
-# project types then you can just remove this section.
-# If no `project_type_tags` specified (or specified as an empty array)
-# that means the step can be used for any project type.
-# You can find more information about project type tags in the Step Development Guideline:
-# https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
-#
-# project_type_tags:
-#   - ios
-#   - macos
-#   - android
-#   - xamarin
-#   - react-native
-#   - cordova
-#   - ionic
+project_type_tags:
+  - ios
+  - macos
+
 
 # Type tags are used for categorizing steps, for easier step discovery in Step Libraries.
 # You can find more information about type tags in the Step Development Guideline:
@@ -61,6 +48,12 @@ toolkit:
 
 
 inputs:
+  - variable_injector_version: 0.2.0
+    opts:
+      title: Swift Variable Injector Version
+      description: |-
+        Variable Injector version to be used. Step will fail if invalid or non-existent is specified.
+      is_required: true
   - files_paths: 
     opts:
       title: "Paths of the Swift files"
@@ -70,10 +63,10 @@ inputs:
         The files will be visited by the [variable-injector](https://github.com/LucianoPAlmeida/variable-injector).
         If there are literals matching the ENV_VAR pattern and the environment variable name is defined on the current workflow it will replace with it value.
       
-      is_expand: false
+      is_expand: true
       is_required: true
 
-  - paths_to_exclude: 
+  - vars_to_ignore: 
     opts:
       title: "Environment Variable Names to ignore"
       summary: The variable names that will be ignored by the variable injector.
@@ -81,7 +74,7 @@ inputs:
         All the names paths separated by a white space.
         If a string literal on this files matches the environment variable pattern $(ENV_VAR) but is not a ENV var to be replaced we can just ignore it. 
       
-      is_expand: false
+      is_expand: true
       is_required: false
   - verbose: false
     opts:
