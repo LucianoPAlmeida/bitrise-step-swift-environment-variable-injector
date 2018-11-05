@@ -8,7 +8,8 @@ cp -f x86_64-apple-macosx10.10/release/variable-injector /usr/local/bin/variable
 cp -f x86_64-apple-macosx10.10/release/libSwiftSyntax.dylib /usr/local/lib/libSwiftSyntax.dylib
 #Check verbose
 VERBOSE=""
-if [${verbose} = true ]; then
+
+if [ ${verbose} = true ]; then
     VERBOSE="--verbose"
 fi;
 
