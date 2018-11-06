@@ -54,7 +54,7 @@ inputs:
       description: |-
         Variable Injector version to be used. Step will fail if invalid or non-existent is specified.
       is_required: true
-  - files_paths: 
+  - files: 
     opts:
       title: "Paths of the Swift files"
       summary: The paths for the files which you be checked and have the values replaced if it's aplicable.

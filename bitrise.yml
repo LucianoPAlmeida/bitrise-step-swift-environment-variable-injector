@@ -40,7 +40,8 @@ workflows:
           file if you would not specify another value.
         run_if: true
         inputs:
-        - example_step_input: Example Step Input's value
+        - files: "~/File.swift"
+        - verbose: true
     - script:
         inputs:
         - content: |
@@ -62,10 +63,10 @@ workflows:
   share-this-step:
     envs:
       # if you want to share this step into a StepLib
-      - MY_STEPLIB_REPO_FORK_GIT_URL: $MY_STEPLIB_REPO_FORK_GIT_URL
-      - BITRISE_STEP_ID: $BITRISE_STEP_ID
-      - BITRISE_STEP_VERSION: $BITRISE_STEP_VERSION
-      - BITRISE_STEP_GIT_CLONE_URL: $BITRISE_STEP_GIT_CLONE_URL
+      - MY_STEPLIB_REPO_FORK_GIT_URL: git@github.com:LucianoPAlmeida/bitrise-steplib.git
+      - BITRISE_STEP_ID: swift-environment-variable-injector
+      - BITRISE_STEP_VERSION: 0.1.0
+      - BITRISE_STEP_GIT_CLONE_URL: git@github.com:LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector.git
     description: |-
       If this is the first time you try to share a Step you should
       first call: $ bitrise share
