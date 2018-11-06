@@ -1,6 +1,6 @@
 # Swift Envirionment Variable Injector
 
-TThis step allows us to inject CI pipelines environment variables values into Swift code  static values before compilation and Continuous deployment to a specific environment(Development, Testing or Production) where we can define the values injected for each build and deployment e.g. a API url that the App uses and is different for each environment. Also it allows us to not expose our production keys and values in statically in our code.
+This step allows us to inject CI pipelines environment variables values into Swift code  static values before compilation and Continuous deployment to a specific environment(Development, Testing or Production) where we can define the values injected for each build and deployment e.g. a API url that the App uses and is different for each environment. Also it allows us to not expose our production keys and values in statically in our code.
 
 
 ## How to use this Step
