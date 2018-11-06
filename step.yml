@@ -12,10 +12,12 @@ title: |-
 summary: |
   Step to inject static values from environment variables into Swift code files before compilation and Continuous deployment allowing us to not expose our production keys and values in statically in our code and store sensitive values safe.
 description: |
-  This step allows us to inject CI pipelines environment variables values into Swift code static values before compilation and Continuous deployment to a specific environment(Development, Testing or Production) where we can define the values injected for each build and deployment e.g. a API url that the App uses and is different for each environment. Also it allows us to not expose our production keys and values in statically in our code.
-website: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector
-source_code_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector
-support_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector/issues
+  This step allows us to inject CI pipelines environment variables values into Swift code static values before compilation and Continuous deployment to a specific environment(Development, Testing or Production) where we can define the values injected for each build and deployment e.g. a API url that the App uses and is different for each environment. 
+  Also it allows us to not expose our production keys and values in statically in our code.
+  For more info, check out the Swift [Variable Injector Project](https://github.com/LucianoPAlmeida/variable-injector) on github.
+website: https://github.com/LucianoPAlmeida/bitrise-step-swift-environment-variable-injector
+source_code_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-environment-variable-injector
+support_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-environment-variable-injector/issues
 host_os_tags:
   - osx-10.10
 
