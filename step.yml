@@ -10,9 +10,9 @@
 title: |-
   Swift Environment Variable Injector
 summary: |
-  Step to inject static values from environment variables into Swift code files before compilation and Continuous deployment allowing us to not expose our production keys and values in statically in our code and store sensitive values  safe.
+  Step to inject static values from environment variables into Swift code files before compilation and Continuous deployment allowing us to not expose our production keys and values in statically in our code and store sensitive values safe.
 description: |
-  TThis step allows us to inject CI pipelines environment variables values into Swift code  static values before compilation and Continuous deployment to a specific environment(Development, Testing or Production) where we can define the values injected for each build and deployment e.g. a API url that the App uses and is different for each environment. Also it allows us to not expose our production keys and values in statically in our code.
+  This step allows us to inject CI pipelines environment variables values into Swift code static values before compilation and Continuous deployment to a specific environment(Development, Testing or Production) where we can define the values injected for each build and deployment e.g. a API url that the App uses and is different for each environment. Also it allows us to not expose our production keys and values in statically in our code.
 website: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector
 source_code_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector
 support_url: https://github.com/LucianoPAlmeida/bitrise-step-swift-envirionment-variable-injector/issues
@@ -23,12 +23,11 @@ project_type_tags:
   - ios
   - macos
 
-
 # Type tags are used for categorizing steps, for easier step discovery in Step Libraries.
 # You can find more information about type tags in the Step Development Guideline:
 # https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
 type_tags:
-  - dependency
+  - utility
 
 is_requires_admin_user: true
 is_always_run: false
@@ -37,9 +36,7 @@ run_if: ""
 
 deps:
   brew:
-  - name: git
   - name: wget
-  - name: curl
   - name: unzip
 
 toolkit:
@@ -76,7 +73,7 @@ inputs:
       
       is_expand: true
       is_required: false
-  - verbose: false
+  - verbose: "false"
     opts:
       title: "Verbose mode"
       summary: Indicates if the injection should print logs.
@@ -85,5 +82,5 @@ inputs:
       
       is_expand: true
       is_required: false
-      value_options: [true, false]
+      value_options: ["true", "false"]
 
