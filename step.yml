@@ -8,7 +8,7 @@
 # - Bitrise CLI guides: http://devcenter.bitrise.io/bitrise-cli/
 
 title: |-
-  Swift Envirionment Variable Injector
+  Swift Environment Variable Injector
 summary: |
   Step to inject static values from environment variables into Swift code files before compilation and Continuous deployment allowing us to not expose our production keys and values in statically in our code and store sensitive values  safe.
 description: |
