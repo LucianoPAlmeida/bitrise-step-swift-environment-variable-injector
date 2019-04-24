@@ -47,7 +47,7 @@ toolkit:
 
 
 inputs:
-  - variable_injector_version: 0.2.0
+  - variable_injector_version: 0.2.1
     opts:
       title: Swift Variable Injector Version
       description: |-
