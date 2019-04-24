@@ -38,8 +38,8 @@ run_if: ""
 
 deps:
   brew:
-  - name: wget
-  - name: unzip
+  - name: git
+  - name: cmake
 
 toolkit:
   bash:
