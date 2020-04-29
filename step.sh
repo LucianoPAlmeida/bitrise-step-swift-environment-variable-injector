@@ -21,4 +21,4 @@ fi;
 TEMP_DIR=$(pwd)
 popd
 
-variable-injector --file ${files} $VERBOSE --ignore ${vars_to_ignore} 
+variable-injector --file ${files} $VERBOSE --ignore ${vars_to_ignore:-""}
