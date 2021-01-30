@@ -12,13 +12,18 @@ rm -rf ./__MACOSX/
 
 #Check verbose
 VERBOSE=""
-
-if [ ${verbose} = "true" ]; then
-
+IGNORE_PARAM=""
+if [[ ${verbose} = "true" ]]; then
     VERBOSE="--verbose"
+fi;
+
+# Trim the string.
+VARS_TO_IGNORE=`echo ${vars_to_ignore:-""}`
+if [[ ! -z $VARS_TO_IGNORE ]]; then 
+    IGNORE_PARAM="--ignore $VARS_TO_IGNORE"
 fi;
 
 TEMP_DIR=$(pwd)
 popd
 
-variable-injector --file ${files} $VERBOSE --ignore ${vars_to_ignore:-""}
+echo variable-injector --file ${files} $VERBOSE $IGNORE_PARAM

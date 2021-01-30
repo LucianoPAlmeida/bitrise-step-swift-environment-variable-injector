@@ -80,7 +80,7 @@ inputs:
       title: "Verbose mode"
       summary: Indicates if the injection should print logs.
       description: |
-        All injectictions variables and values logged. Also the output files content.
+        All injections variables and values logged. Also the output files content.
       
       is_expand: true
       is_required: false
