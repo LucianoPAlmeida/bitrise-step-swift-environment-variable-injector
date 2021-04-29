@@ -2,15 +2,25 @@
 set -e
 
 pushd $(mktemp -d)
-wget https://github.com/LucianoPAlmeida/variable-injector/releases/download/${variable_injector_version}/x86_64-apple-macosx.zip
-unzip x86_64-apple-macosx.zip
-cp -f ./x86_64-apple-macosx/release/variable-injector /usr/local/bin/variable-injector
 
-rm ./x86_64-apple-macosx.zip
-rm -rf ./x86_64-apple-macosx
+PLATFORM=$(uname -m)
+TRIPLE=$PLATFORM-apple-macosx
+
+wget https://github.com/LucianoPAlmeida/variable-injector/releases/download/${variable_injector_version}/$TRIPLE.zip
+
+if [[ ! -e $TRIPLE.zip ]]; then
+    echo "Release $variable_injector_version did not contain a pre-built binary targeting this architecture"
+    exit 1
+fi;
+
+unzip $TRIPLE.zip
+cp -f ./$TRIPLE/release/variable-injector /usr/local/bin/variable-injector
+
+rm ./$TRIPLE.zip
+rm -rf ./$TRIPLE
 rm -rf ./__MACOSX/
 
-#Check verbose
+# Check verbose
 VERBOSE=""
 IGNORE_PARAM=""
 if [[ ${verbose} = "true" ]]; then
