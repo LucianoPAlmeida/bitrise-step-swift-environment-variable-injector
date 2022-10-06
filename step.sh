@@ -14,6 +14,12 @@ if [[ ! -e $TRIPLE.zip ]]; then
 fi;
 
 unzip $TRIPLE.zip
+
+#Copy syntax parser lib if exists.
+if [[ -e ./$TRIPLE/release/lib_InternalSwiftSyntaxParser.dylib ]]; then
+    cp -f ./$TRIPLE/release/lib_InternalSwiftSyntaxParser.dylib /usr/local/bin/lib_InternalSwiftSyntaxParser.dylib
+fi;
+
 cp -f ./$TRIPLE/release/variable-injector /usr/local/bin/variable-injector
 
 rm ./$TRIPLE.zip
