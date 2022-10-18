@@ -42,4 +42,4 @@ fi;
 TEMP_DIR=$(pwd)
 popd
 
-echo variable-injector --file ${files} $VERBOSE $IGNORE_PARAM
+variable-injector --file ${files} $VERBOSE $IGNORE_PARAM
